@@ -8,4 +8,5 @@ export default defineConfig({
     permissions: ["activeTab"],
     host_permissions: ["*://*/*"],
   },
+  
 });

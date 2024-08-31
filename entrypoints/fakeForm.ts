@@ -1,11 +1,13 @@
-import { faker } from '@faker-js/faker'
 
 export default defineContentScript({
     matches: ['*://*/*'],
     main() {
         const inputs = document.querySelectorAll('input')
+        let forms:Record<string,any> = {}
         inputs.forEach(input => {
-            input.value = faker.animal.cat()
+            forms[input.name] = input.name
         })
+        console.log(inputs)
+        browser.runtime.sendMessage({forms})
     }
 });

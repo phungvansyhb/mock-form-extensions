@@ -10,28 +10,20 @@ function App() {
           files : ['./fakeForm.js']
         });
   }
+  browser.runtime.onMessage.addListener((message : any) => {
+    console.log(message)
+  })
   return (
     <>
-      <div>
-        <a href="https://wxt.dev" target="_blank">
-          <img src={wxtLogo} className="logo" alt="WXT logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>WXT + React</h1>
+      
+      <h1>Mocker form faster</h1>
       <div className="card">
-        <button onClick={() => handleMockForm()}>
-          mock form
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
+          <ul>
+              <li>1. Hold <b>Shift</b> key and choose input of form that you want to mock</li>
+              <li>2. <b>Click</b> and see magic :)) </li>
+          </ul>
       </div>
-      <p className="read-the-docs">
-        Click on the WXT and React logos to learn more
-      </p>
+      
     </>
   );
 }
